@@ -6,9 +6,10 @@ node {
      commit_id = readFile('.git/commit-id').trim()
    }
    stage('Build'){
-  docker.image('node:8').inside {
-    sh 'node -version'
-}       
+   docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+       bat 'docker --version'
+		bat 'docker images'
+     }      
   }
    
 
