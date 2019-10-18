@@ -1,11 +1,9 @@
 pipeline {
-    agent {
-        docker { image 'node:8' }
-    }
+    agent { docker { image 'node:8' } }
     stages {
-        stage('Test') {
+        stage('build') {
             steps {
-                sh 'node --version'
+                sh 'npm --version'
             }
         }
     }
