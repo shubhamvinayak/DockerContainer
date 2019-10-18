@@ -6,9 +6,9 @@ node {
      commit_id = readFile('.git/commit-id').trim()
    }
    stage('Build'){
-   docker.image('node:8').inside {
-    print "inside a node server"
-    sh("echo test");        
+  docker.image('node:8').inside {
+    sh 'node -version'
+}       
   }
    }
 
