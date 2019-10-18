@@ -9,10 +9,7 @@ node {
    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
        bat 'docker --version'
 	bat 'docker images'
-	   docker.image('node:8').inside {
-    print "inside a node server"
-    sh("echo test");        
-  }
+	def app = docker.build("component-image:", 'Dockerfile')
      }      
   }
    
