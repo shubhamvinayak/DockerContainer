@@ -8,7 +8,7 @@ node {
    stage('Build'){
     bat  "docker images"
       withDockerContainer("node:8"){
-       bat "node --version"  
+       bat "npm install"  
       }
    }
 
