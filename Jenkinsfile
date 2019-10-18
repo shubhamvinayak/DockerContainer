@@ -8,7 +8,7 @@ node {
    stage('Build'){
     bat  "docker images"
       withDockerContainer('docker-snapshot.cernerrepos.net/mpages/build-image'){
-       sh 'mvn -v'  
+       
       }
    }
 
