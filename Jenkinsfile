@@ -6,10 +6,10 @@ node {
      commit_id = readFile('.git/commit-id').trim()
    }
    stage('Build'){
-    bat  "docker images"
-      withDockerContainer('docker-snapshot.cernerrepos.net/mpages/build-image'){
-       
-      }
+   docker.image('node:8').inside {
+    print "inside a node server"
+    sh("echo test");        
+  }
    }
 
 }
